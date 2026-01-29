@@ -1,6 +1,0 @@
-[submodule "include/nGL"]
-	path = include/nGL
-	url = https://github.com/Vogtinator/nGL.git
-[submodule "include/lodepng"]
-	path = include/lodepng
-	url = https://github.com/lvandeve/lodepng.git
