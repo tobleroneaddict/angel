@@ -1,10 +1,6 @@
 #pragma once
 #include "globals.h"
 #include "bundle.h"
-#include "../include/nGL/gl.h"
-
-
-
 
 /*
 *   ModelGroup contains all the found objects in a given obj file. 

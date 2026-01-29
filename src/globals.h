@@ -4,10 +4,10 @@
 #include <algorithm>
 #include <libndls.h>
 #include "zlib.h"
-#include "../include/lodepng/lodepng.h"
-#include "../include/nGL/gl.h"
-#include "../include/nGL/texturetools.h"
-#include "../include/nGL/gldrawarray.h"
+#include "../inc/lodepng/lodepng.h"
+#include "../inc/nGL/gl.h"
+#include "../inc/nGL/texturetools.h"
+#include "../inc/nGL/gldrawarray.h"
 
 
 //Texture data object for ngl.
