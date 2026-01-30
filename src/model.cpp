@@ -197,10 +197,9 @@ int ModelGroup::load_group(Bundle* asset_bundle,const char* name) {
             continue;
         }
 
-        //Create Object/Group
+        //Create Object
         if ((lineidx + 2 < obj.size()) &&
-            ((obj[lineidx] == 'o' && obj[lineidx+1] == ' ') ||
-            (obj[lineidx] == 'g' && obj[lineidx+1] == ' '))
+            (obj[lineidx] == 'o' && obj[lineidx+1] == ' ')
             ) {
             //Parse object name
             lineidx += 2;
