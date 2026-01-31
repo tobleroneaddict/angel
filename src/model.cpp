@@ -517,6 +517,10 @@ int ModelGroup::load_group(Bundle* asset_bundle,const char* name) {
 
         //Find material and set it as the object's texture
         anGL_MATERIAL* curr_mat = get_material_by_name(n.material);
+        if (!curr_mat) {
+            printf("ERROR: Material '%s' missing!\n", n.material.c_str());
+            continue;
+        }
         curr_mat->diffuse_texture.texture.has_transparency = true;
         curr_mat->diffuse_texture.texture.transparent_color = 0;
         n.texture = &curr_mat->diffuse_texture.texture;
@@ -545,12 +549,6 @@ int ModelGroup::load_group(Bundle* asset_bundle,const char* name) {
             i++;
         }
         if (errors) { printf("UVs out of range! (%d errors)\n",errors);}
-
-        
-
-
-
-
     }
 
 

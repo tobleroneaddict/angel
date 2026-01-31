@@ -1,4 +1,4 @@
-#include "src/angel.h"
+#include "angel.h"
 
 int main()
 {
