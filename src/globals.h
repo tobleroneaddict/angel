@@ -22,7 +22,12 @@ struct anGL_MATERIAL {
     anGL_TEXTURE diffuse_texture;
 };
 
-
+// Trim from the end (in place)
+inline void rtrim(std::string &s) {
+    s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch) {
+        return !std::isspace(ch);
+    }).base(), s.end());
+}
 
 
 //Updated ngl_object. Reused from nGL converter script with some tweaks

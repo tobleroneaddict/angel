@@ -2,9 +2,11 @@
 
 
 ngl_object* ModelGroup::get_object(const char* name) {
+//hey i should make this the same as get_material_by_name
     ngl_object* found = nullptr;
     for (ngl_object& n : objects) {
         if (name == n.name) {
+
             found = &n;break;
         }
     }
@@ -13,9 +15,11 @@ ngl_object* ModelGroup::get_object(const char* name) {
 
 
 anGL_MATERIAL* ModelGroup::get_material_by_name(std::string name) {
+    rtrim(name);
     anGL_MATERIAL* found = nullptr;
     for (anGL_MATERIAL& n : group_materials) {
-        if (strcmp(n.name.c_str(),name.c_str())) {
+        rtrim(n.name);
+        if (n.name == name) {
             found = &n;break;
         }
     }
