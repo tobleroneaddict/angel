@@ -1,5 +1,7 @@
 #include "angel.h"
 
+using namespace::angel;
+
 int main()
 {
     Bundle assets;
