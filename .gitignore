@@ -306,3 +306,5 @@ Testing/
 *.dae
 *.smd
 include/nGL
+
+!assets.tar.gz.tns

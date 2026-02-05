@@ -18,16 +18,14 @@ namespace angel {
     //Raw data loader
     std::vector<uint8_t> Bundle::load_raw_data(const char* name) {
         std::vector<uint8_t> data;
-        FILE *fp;
+
         gzFile file;
 
         if (bundle_name.size() == 0) { printf("19348 BUNDLE name cannot be empty!\n"); return data;} //Null names not allowed
 
-        //Check & open gz
-        fp = fopen(bundle_name.c_str(), "rb");
-        if (fp == NULL){ printf("89158 Loader error!"); return data;}
+        //open gz
         file = gzopen(bundle_name.c_str(), "rb");
-        if (!file) { printf("45186 Loader error"); return data; }
+        if (!file) { printf("45186 Loader error! gz could not find %s",bundle_name.c_str()); return data; }
         
         Asset a;
 
@@ -74,19 +72,16 @@ namespace angel {
 
 
     int Bundle::load_asset_bundle(const char* name) {
-        FILE *fp;
+
         gzFile file;
         unsigned int  n = 0;
         uint8_t buf[512];
 
-        //fopen is a nice way to test the existence without exploding the os???
-        fp = fopen(name, "rb");
 
-        if (fp == NULL) return 1;
 
         file = gzopen(name, "rb");
 
-        //Shouldnt ever hit
+        //Return if borked
         if (!file) { return 2; }
 
         //load_raw_data uses this

@@ -104,12 +104,23 @@ int main()
 
     ProcessedPosition *processed = new ProcessedPosition[max_pos];
 
+    bool swapped = false;
+    
     #ifdef _TINSPIRE
     while(!isKeyPressed(KEY_NSPIRE_ESC))
     #else
     for(unsigned int i = 1300;--i;)
     #endif
     {
+
+        
+        if (isKeyPressed(KEY_NSPIRE_ENTER) && !swapped) {
+            //Enter will swap to blue miku
+            if (group.swap_texture(&assets,"_0_0","textures/roomitems_013_blue.png") != 0) {
+                printf("error swapping to kage tex");
+            } else {swapped = true;}
+        }
+
         glPushMatrix();
 		glColor3f(0.4f, 0.7f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -131,6 +142,7 @@ int main()
         nglDisplay();
     }
 
+    //This can be used to free a group from memory, like leaving a level.
     group.free_group();
 
     delete[] processed;
