@@ -9,7 +9,7 @@ Summary
 This library was created with nGL compatiblity first, so it contains the framework to load your 3D models into a scene them on the fly.
 - By storing files separate from the executable on a tarball, you can reduce the size of a program drastically (And it's compile time) compared to using nGL's python converter. (Sorry Vogt)
 - Only OBJ files with PNG textures are supported for now. (JPG support coming later)
-
+- Supports on the fly texture switching
 
 ![full_demo](https://github.com/tobleroneaddict/angel/blob/main/resource/full-demo.gif)
 
