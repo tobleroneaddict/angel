@@ -115,7 +115,7 @@ namespace angel {
         }
 
         //Clear material/textures
-        for (anGL_MATERIAL t : group_materials) {
+        for (anGL_MATERIAL &t : group_materials) {
             t.diffuse_texture.data.clear();
             t.name.clear();
         }
