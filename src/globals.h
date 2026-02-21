@@ -10,6 +10,7 @@
 #include "../inc/nGL/gl.h"
 #include "../inc/nGL/texturetools.h"
 #include "../inc/nGL/gldrawarray.h"
+
 namespace angel {
 
     //Texture data object for ngl.
@@ -24,7 +25,7 @@ namespace angel {
         anGL_TEXTURE diffuse_texture;
     };
 
-    
+
 
 
     //Updated ngl_object. Reused from nGL converter script with some tweaks

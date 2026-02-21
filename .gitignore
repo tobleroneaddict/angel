@@ -10,6 +10,8 @@ TestWorld
 *.tns
 *.elf
 *.o
+*.ow
+*.on
 *.zip
 *.mtl
 *.obj
